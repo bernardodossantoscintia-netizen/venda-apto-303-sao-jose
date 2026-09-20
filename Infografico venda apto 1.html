@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apto 303 — Residencial Perequê, Areias, São José/SC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #3a3a3a;
+      --muted: #7a7a7a;
+      --white: #ffffff;
+      --taupe: #c4b396;
+      --taupe-dark: #a89274;
+      --brand: #6f6f6f;
+      --contact: #3d3d3d;
+      --page: #ece8e2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Montserrat, sans-serif;
+      color: var(--ink);
+      background: var(--page);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .flyer {
+      width: min(900px, calc(100% - 24px));
+      margin: 28px auto;
+      background: var(--white);
+      box-shadow: 0 24px 70px rgba(58, 58, 58, 0.16);
+    }
+
+    .hero {
+      position: relative;
+      height: 420px;
+      background: url("PHOTO-2026-09-20-13-25-24.jpg") center/cover no-repeat;
+    }
+
+    .hero-btn {
+      position: absolute;
+      inset: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .brand-box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 42%;
+      min-height: 168px;
+      background: var(--brand);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 54px;
+      height: 54px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-box strong {
+      font-size: 1.35rem;
+      letter-spacing: 0.16em;
+    }
+
+    .brand-box span {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      opacity: 0.85;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .col {
+      padding: 40px 32px 24px;
+    }
+
+    .col-right {
+      background: var(--taupe);
+      color: #fff;
+    }
+
+    .title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 14px;
+    }
+
+    .title.big {
+      font-size: clamp(2.2rem, 4.4vw, 3.1rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    .title.big small {
+      display: block;
+      font-size: 0.42em;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .copy {
+      color: var(--muted);
+      font-size: 0.86rem;
+      max-width: 34ch;
+    }
+
+    .col-right .copy { color: rgba(255, 255, 255, 0.92); }
+
+    .facilities {
+      margin-top: 36px;
+    }
+
+    .facilities h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 18px;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 10px;
+      align-items: start;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .item svg {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      fill: none;
+      stroke: var(--ink);
+      stroke-width: 1.7;
+    }
+
+    .item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.82rem;
+    }
+
+    .offer {
+      margin-top: 28px;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .price {
+      margin-top: 6px;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .thumbs {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      padding: 8px 24px 0;
+      position: relative;
+      z-index: 2;
+      margin-bottom: -52px;
+    }
+
+    .thumb {
+      width: 132px;
+      height: 132px;
+      border: 0;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 210px;
+      padding-top: 70px;
+    }
+
+    .contact-dark {
+      background: var(--contact);
+      color: #fff;
+      padding: 56px 42px 36px;
+    }
+
+    .contact-light {
+      background: var(--white);
+      padding: 56px 42px 36px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .contact-dark h3 {
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+    }
+
+    .phone {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-dark p:last-child {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      opacity: 0.8;
+    }
+
+    .contact-light p + p { margin-top: 8px; }
+
+    form {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    input, textarea, button {
+      font: inherit;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid #ddd4c6;
+      border-radius: 8px;
+      padding: 9px 10px;
+    }
+
+    textarea { min-height: 64px; resize: vertical; }
+
+    button, .whats {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background: var(--contact);
+      color: #fff;
+      padding: 10px 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .status {
+      min-height: 18px;
+      font-size: 0.78rem;
+    }
+
+    .bar {
+      background: var(--taupe-dark);
+      color: #fff;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+      padding: 22px 16px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(32, 32, 32, 0.88);
+      display: none;
+      place-items: center;
+      z-index: 100;
+      padding: 24px;
+    }
+
+    .lightbox.open { display: grid; }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 86vh;
+    }
+
+    @media (max-width: 560px) {
+      .flyer { margin: 0; width: 100%; }
+      .hero { height: 280px; }
+      .brand-box { width: 48%; min-height: 130px; }
+      .split, .contact, .bar { grid-template-columns: 1fr; }
+      .col, .contact-dark, .contact-light { padding: 32px 22px; }
+      .thumbs { gap: 12px; margin-bottom: -36px; }
+      .thumb { width: 96px; height: 96px; }
+      .contact { padding-top: 48px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 8mm; }
+      body { background: #fff; }
+      .flyer { width: 100%; margin: 0; box-shadow: none; }
+      .lightbox, form, .status { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <article class="flyer">
+    <header class="hero">
+      <button class="hero-btn" data-photo="PHOTO-2026-09-20-13-25-24.jpg" aria-label="Abrir foto da fachada do prédio"></button>
+      <div class="brand-box">
+        <div class="logo">303</div>
+        <strong>APTO 303</strong>
+        <span>RESIDENCIAL PEREQUÊ</span>
+      </div>
+    </header>
+
+    <section class="split">
+      <div class="col">
+        <h2 class="title">Residencial Perequê</h2>
+        <p class="copy">Areias, São José/SC. Prédio com interfone e CFTV. Imóvel desocupado, livre para visita e mudança imediata. Sala integrada com a cozinha, cozinha integrada com a lavanderia, sacada com churrasqueira e pia.</p>
+        <div class="facilities">
+          <h3>O imóvel oferece</h3>
+          <div class="grid">
+            <div class="item">
+              <svg viewBox="0 0 24 24"><path d="M4 11h16v8H4zM4 11V8a2 2 0 0 1 2-2h4v5M14 6h4a2 2 0 0 1 2 2v3"/></svg>
+              <div><strong>02 quartos</strong>67 m²</div>
+            </div>
+            <div class="item">
+              <svg viewBox="0 0 24 24"><path d="M6 10h12v8H6zM8 10V8m8 2V8M6 14h12"/></svg>
+              <div><strong>01 banheiro</strong>01 garagem</div>
+            </div>
+            <div class="item">
+              <svg viewBox="0 0 24 24"><path d="M5 18V9l7-4 7 4v9H5z"/></svg>
+              <div><strong>Sala + cozinha</strong>lavanderia integrada</div>
+            </div>
+            <div class="item">
+              <svg viewBox="0 0 24 24"><path d="M6 18c2-4 4-6 6-6s4 2 6 6M8 10h8"/></svg>
+              <div><strong>Sacada</strong>churrasqueira e pia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-right">
+        <h2 class="title big"><small>Desocupado</small>APTO 303</h2>
+        <p class="copy">67 m² no Residencial Perequê, nº 538, Areias, São José/SC. Prédio bem localizado, próximo à Avenida das Torres, mercados Giassi e Koch, farmácias e academias. Pronto para morar.</p>
+        <p class="offer">Valor de</p>
+        <p class="price">R$ 450.000</p>
+      </div>
+    </section>
+
+    <div class="thumbs">
+      <button class="thumb" data-photo="PHOTO-2026-09-20-13-29-10-3.jpg" style="background-image:url('PHOTO-2026-09-20-13-29-10-3.jpg')" aria-label="Abrir foto da sala"></button>
+      <button class="thumb" data-photo="PHOTO-2026-09-20-13-25-24-4.jpg" style="background-image:url('PHOTO-2026-09-20-13-25-24-4.jpg')" aria-label="Abrir foto do quarto"></button>
+      <button class="thumb" data-photo="PHOTO-2026-09-20-13-29-10-2.jpg" style="background-image:url('PHOTO-2026-09-20-13-29-10-2.jpg')" aria-label="Abrir foto da sacada"></button>
+    </div>
+
+    <section class="contact" id="visita">
+      <div class="contact-dark">
+        <h3>Contato</h3>
+        <a class="phone" href="https://wa.me/5548999919435" target="_blank" rel="noopener noreferrer">(48) 99991-9435</a>
+        <p>WhatsApp · visita sem compromisso</p>
+      </div>
+      <div class="contact-light">
+        <p><strong>Local:</strong> Areias, São José/SC</p>
+        <p><strong>Próximo:</strong> Avenida das Torres, Giassi, Koch, farmácias e academias</p>
+        <p><strong>Situação:</strong> desocupado</p>
+        <p><strong>IPTU:</strong> em torno de R$ 600,00</p>
+        <p><strong>Aluguel na região:</strong> a partir de R$ 2.000,00</p>
+        <form id="visita-form">
+          <input id="nome" name="nome" type="text" required placeholder="Seu nome" />
+          <input id="telefone" name="telefone" type="tel" required placeholder="Seu telefone" />
+          <textarea id="mensagem" name="mensagem" placeholder="Quero conhecer o apto 303..."></textarea>
+          <button type="submit">Enviar no WhatsApp</button>
+          <p class="status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="bar">
+      <span>AREIAS · SÃO JOSÉ/SC</span>
+      <span>DESOCUPADO</span>
+      <span>01 VAGA DE GARAGEM</span>
+    </footer>
+  </article>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+    <img id="lightbox-image" alt="Foto do apartamento" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
