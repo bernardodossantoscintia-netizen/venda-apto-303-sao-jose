@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="USP">
+  <rect width="64" height="64" rx="8" fill="#1094ab"/>
+  <text x="32" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#ffffff">USP</text>
+  <text x="32" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="0.5" fill="#d4f0f5">ESALQ</text>
+</svg>

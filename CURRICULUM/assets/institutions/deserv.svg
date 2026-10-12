@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DeServ">
+  <rect width="64" height="64" rx="8" fill="#1a237e"/>
+  <path d="M18 22h16c6 0 10 3.5 10 10s-4 10-10 10H18V22z" fill="none" stroke="#90caf9" stroke-width="3"/>
+  <path d="M26 28v16M26 28h6c3.2 0 5 1.6 5 4.5S35.2 37 32 37h-6" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="32" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="700" fill="#ffffff">DeServ</text>
+</svg>

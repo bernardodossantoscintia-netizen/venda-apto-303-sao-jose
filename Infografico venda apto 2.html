@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apto 303 — Infográfico 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #071422;
+      --navy-2: #0b1c30;
+      --gold: #d4b45a;
+      --gold-2: #e8cc78;
+      --gold-3: #f3e2a8;
+      --white: #f7f4ea;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      background: var(--navy);
+      font-family: Montserrat, sans-serif;
+      color: var(--white);
+    }
+
+    .stage {
+      display: grid;
+      place-items: start center;
+      padding: 0;
+      width: 210mm;
+      height: 297mm;
+    }
+
+    .flyer {
+      width: 210mm;
+      height: 297mm;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(212, 180, 90, 0.08), transparent 28%),
+        linear-gradient(180deg, #0a1a2e 0%, var(--navy) 18%, var(--navy) 100%);
+      border: 0;
+      box-shadow: none;
+      padding: 8mm 9mm 0;
+    }
+
+    .gold {
+      background: linear-gradient(180deg, var(--gold-3), var(--gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 10px;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .brand-left, .brand-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-right { justify-content: flex-end; text-align: right; }
+
+    .key-mark, .build-mark {
+      width: 52px;
+      height: 52px;
+      flex: 0 0 auto;
+    }
+
+    .brand-left h1 {
+      font-size: clamp(1.45rem, 3.4vw, 2rem);
+      letter-spacing: 0.04em;
+      line-height: 0.95;
+    }
+
+    .brand-left h1 small {
+      display: block;
+      font-size: 0.42em;
+      letter-spacing: 0.18em;
+      margin-top: 4px;
+    }
+
+    .creci {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold-2);
+    }
+
+    .creci b {
+      width: 16px;
+      height: 16px;
+      border: 2px solid #2ecc71;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #2ecc71;
+      font-size: 0.7rem;
+    }
+
+    .brand-right strong {
+      display: block;
+      font-size: clamp(1.2rem, 2.8vw, 1.7rem);
+      letter-spacing: 0.12em;
+      line-height: 0.95;
+    }
+
+    .brand-right span {
+      display: block;
+      margin-top: 6px;
+      max-width: 32ch;
+      font-size: 0.68rem;
+      line-height: 1.35;
+      color: rgba(247, 244, 234, 0.82);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 16px;
+      padding: 12px 0 10px;
+      align-items: center;
+    }
+
+    .kicker {
+      color: var(--gold-2);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .hero h2 {
+      font-family: Cinzel, serif;
+      font-size: 2.7rem;
+      line-height: 0.9;
+      letter-spacing: 0.01em;
+      margin: 4px 0 8px;
+    }
+
+    .place {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--gold-2);
+    }
+
+    .pin {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--gold-2);
+    }
+
+    .pin svg { width: 22px; height: 22px; }
+
+    .hero-photo {
+      min-height: 248px;
+      overflow: hidden;
+      border: 3px solid rgba(212, 180, 90, 0.55);
+      background: #0a1a2e;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 248px;
+      object-fit: cover;
+      object-position: right center;
+      display: block;
+    }
+
+    .price {
+      display: flex;
+      justify-content: center;
+      margin: 2px 0 10px;
+    }
+
+    .price b {
+      min-width: 72%;
+      text-align: center;
+      border: 3px solid var(--gold);
+      border-radius: 10px;
+      padding: 8px 22px 6px;
+      font-size: 2.35rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--gold-2);
+      background: rgba(7, 20, 34, 0.55);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 4px;
+      padding: 10px 0 12px;
+      border-top: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      text-align: center;
+    }
+
+    .stat svg {
+      width: 34px;
+      height: 34px;
+      margin: 0 auto 6px;
+      stroke: var(--gold-2);
+      fill: none;
+      stroke-width: 1.7;
+    }
+
+    .stat strong, .stat span {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--gold-2);
+      line-height: 1.25;
+    }
+
+    .shots {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      padding: 12px 0 10px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .shots div {
+      height: 100%;
+      min-height: 132px;
+      border: 3px solid rgba(212, 180, 90, 0.7);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .banners {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 4px 4px 10px;
+    }
+
+    .banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .banner svg {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 auto;
+      stroke: var(--gold-2);
+      fill: none;
+      stroke-width: 1.7;
+    }
+
+    .banner strong {
+      display: block;
+      color: var(--gold-2);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+    }
+
+    .cta {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      background: #08101c;
+      border-top: 2px solid var(--gold);
+      padding: 10px 6px 8px;
+    }
+
+    .cta-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .wa {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #25d366;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .cta-left p {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+
+    .cta-left p span {
+      display: block;
+      color: var(--gold-2);
+      font-size: 1.05rem;
+    }
+
+    .phone {
+      text-align: right;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      color: var(--gold-2);
+    }
+
+    .foot {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      background: var(--gold);
+      color: #1b1406;
+      text-align: center;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 8px 8px;
+      margin: 0 -9mm;
+    }
+
+    @page { size: A4 portrait; margin: 0; }
+
+    @media print {
+      html, body, .stage {
+        width: 210mm;
+        height: 297mm;
+        background: var(--navy);
+        padding: 0;
+        margin: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .flyer { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <article class="flyer" id="flyer">
+      <header class="header">
+        <div class="brand-left">
+          <svg class="key-mark" viewBox="0 0 78 78" aria-hidden="true">
+            <path d="M14 46 V22 l25-12 25 12 v24" fill="none" stroke="#d4b45a" stroke-width="3"/>
+            <circle cx="39" cy="48" r="11" fill="none" stroke="#d4b45a" stroke-width="3"/>
+            <path d="M50 48 h16 v5 h-5 v5" fill="none" stroke="#d4b45a" stroke-width="3"/>
+          </svg>
+          <div>
+            <h1 class="gold">APTO 303<small>RESIDENCIAL PEREQUÊ</small></h1>
+            <p class="creci"><b>✓</b> DESOCUPADO · PRONTO PARA MORAR</p>
+          </div>
+        </div>
+        <div class="brand-right">
+          <div>
+            <strong class="gold">SÃO JOSÉ<br />SC</strong>
+            <span>Bairro Areias. Próximo à Avenida das Torres, Giassi, Koch, farmácias e academias.</span>
+          </div>
+          <svg class="build-mark" viewBox="0 0 78 78" aria-hidden="true">
+            <path d="M10 66 L39 10 68 66 Z" fill="none" stroke="#d4b45a" stroke-width="3"/>
+            <path d="M28 58 h22 v-18 h-22z M32 48 v-6 M39 48 v-8 M46 48 v-5" fill="none" stroke="#d4b45a" stroke-width="2.4"/>
+          </svg>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="kicker">VENDE-SE</p>
+          <h2 class="gold">APARTAMENTO</h2>
+          <p class="place">NO BAIRRO AREIAS<br />SÃO JOSÉ - SC</p>
+          <p class="pin">
+            <svg viewBox="0 0 24 24"><path d="M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z" fill="none" stroke="#d4b45a" stroke-width="1.8"/><circle cx="12" cy="10" r="2.3" fill="#d4b45a"/></svg>
+            LOCALIZAÇÃO PRIVILEGIADA!
+          </p>
+        </div>
+        <div class="hero-photo">
+          <img src="hero-predio.jpg" alt="Fachada do Residencial Perequê, nº 538" />
+        </div>
+      </section>
+
+      <p class="price"><b>R$ 450.000,00</b></p>
+
+      <section class="stats">
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M3 11h18v9H3zM5 11V8h5v3M14 8h5v3M7 15h4"/></svg>
+          <strong>2 QUARTOS</strong>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M5 10h14v9H5zM8 10V8m8 2V8M5 14h14"/></svg>
+          <strong>1 BANHEIRO</strong>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M4 14h16v5H4zM7 14V11h10v3M6 19v2M18 19v2"/></svg>
+          <strong>SALA + COZINHA</strong>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M3 16h18v3H3zM5 16l2-5h10l2 5M7 19v2M17 19v2"/></svg>
+          <strong>1 GARAGEM</strong>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M5 5h14v14H5zM9 5v14M5 10h14"/></svg>
+          <strong>ÁREA 67 m²</strong>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M4 18c3-6 6-8 8-8s5 2 8 8M7 10h10"/></svg>
+          <strong>SACADA</strong>
+          <span>CHURRASQUEIRA</span>
+        </div>
+      </section>
+
+      <section class="shots">
+        <div style="background-image:url('PHOTO-2026-09-20-13-29-10.jpg')" role="img" aria-label="Sala"></div>
+        <div style="background-image:url('PHOTO-2026-09-20-13-25-24-4.jpg')" role="img" aria-label="Quarto"></div>
+        <div style="background-image:url('PHOTO-2026-09-20-13-29-10-2.jpg')" role="img" aria-label="Sacada"></div>
+      </section>
+
+      <section class="banners">
+        <div class="banner">
+          <svg viewBox="0 0 24 24"><path d="M8 12a4 4 0 1 1 4 4H7"/><path d="M8 16l-2-2 2-2"/></svg>
+          <div>
+            <strong>DESOCUPADO</strong>
+            <strong>MUDANÇA IMEDIATA</strong>
+          </div>
+        </div>
+        <div class="banner">
+          <svg viewBox="0 0 24 24"><path d="M4 18V9l8-5 8 5v9H4z"/><path d="M10 18v-6h4v6"/></svg>
+          <div>
+            <strong>INTERFONE E CFTV</strong>
+            <strong>PRÉDIO Nº 538</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="cta-left">
+          <div class="wa" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="32" height="32"><path fill="#fff" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3zm4.6 12.6c-.2.5-1 .9-1.4 1-.4.1-.8.1-2.6-.5-2.2-.8-3.6-2.9-3.7-3.1-.1-.2-1-1.3-1-2.5s.6-1.8.8-2 .4-.3.6-.3h.5c.2 0 .4 0 .6.5.2.6.7 1.7.8 1.8s.1.3 0 .5l-.3.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.3 2.5 1.5s.4 0 .6-.1l.8-.9c.2-.2.4-.2.6-.1.2.1 1.5.7 1.8.8s.4.2.5.3c.1.4 0 .9-.2 1.4z"/></svg>
+          </div>
+          <p>FALE DIRETO NO WHATSAPP<br /><span>AGENDE SUA VISITA!</span></p>
+        </div>
+        <p class="phone">(48) 99991-9435</p>
+      </section>
+
+      <footer class="foot">
+        <span>AREIAS · SÃO JOSÉ/SC</span>
+        <span>AV. DAS TORRES · GIASSI · KOCH</span>
+        <span>RESIDENCIAL PEREQUÊ 538</span>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
